@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Jobs</title>
+  <link rel="icon" href="./image/blck-logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+        <div id="navbar-container"></div>
+<main class="mx-auto">
+          <section>
+            <div class="bg-indigo-600">
+              <h1 class="py-16 text-center text-4xl font-semibold text-white">Job List</h1>
+              <p class="pb-6 text-center text-sm font-semibold text-white">HOME > PAGES > Job List</p>
+            </div>
+          </section>
+
+          <body class="bg-gray-100">
+            <div class="container mx-auto px-4 py-8">
+              <div class="flex justify-between items-center mb-4">
+                <!-- Search Bar -->
+                <input type="text" id="search-bar" class="border p-2 w-full max-w-lg rounded-lg" placeholder="Search for jobs...">
+                <!-- Category Filter -->
+                <select id="category-filter" class="border p-2 rounded-lg ml-4">
+                  <option value="">All Categories</option>
+                </select>
+              </div>
+              <div id="search-results-header" class="hidden">
+                <hr class="my-4">
+                <h2 class="text-2xl font-bold">Search Results:</h2>
+              </div>
+              <div id="all-jobs-container" class="space-y-4">
+                <!-- All jobs will be displayed here -->
+              </div>
+            </div>
+          </body>
+
+
+</main>
+<div id="footer-placeholder"></div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      // Fetch and load the navbar
+      fetch('navbar-emp.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbar-container').innerHTML = data;
+          });
+
+      // Fetch and load the footer
+      fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('footer-placeholder').innerHTML = data;
+          });
+  });
+</script>
+<script src="navbar-emp.js"></script>
+<script src="all-jobs.js"></script>
+
+</html>

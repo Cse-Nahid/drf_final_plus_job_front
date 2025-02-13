@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.navhead{
+    background-color:#0C4F3F ;
+    color: black;
+}

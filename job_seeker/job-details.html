@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHunt - Job Details</title>
+    <link rel="icon" href="./image/blck-logo.png" type="image/png">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <main class="mx-auto bg-[#F1F0FE]">
+        <section class="bg-[#6055F2] ">
+            <h1 class="py-16 text-center text-4xl font-semibold text-white">Job Details</h1>
+            <p class="pb-6 text-center text-sm font-semibold text-white">HOME > COMPANY > DETAILS</p>
+        </section>
+        <section id="job-details-container" class="p-4">
+            <!-- Job details will be displayed here -->
+            <!-- all code in js  -->
+
+        </section>
+        <section class="mb-5">
+            <!-- Button to Open Modal -->
+            <div class="text-center">
+                <button id="openModalBtn" class="bg-indigo-600 text-white px-4 py-2 rounded-md">Apply For This
+                    Job</button>
+            </div>
+
+            <!-- Modal -->
+            <!-- Apply Now Modal -->
+            <div id="apply-modal"
+                class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+                <div class="bg-white p-8 rounded-lg max-w-lg w-full">
+                    <h2 class="text-xl font-bold mb-4">Apply for Job</h2>
+                    <form id="apply-form">
+                        <div class="mb-4">
+                            <label for="cover-letter" class="block text-sm font-medium text-gray-700">Cover
+                                Letter</label>
+                            <textarea id="cover-letter" name="cover_letter" rows="4"
+                                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="resume" class="block text-sm font-medium text-gray-700">Resume</label>
+                            <input type="file" id="resume" name="resume"
+                                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm">
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="button" id="cancel-apply"
+                                class="mr-4 px-4 py-2 bg-gray-500 text-white rounded-lg">Cancel</button>
+                            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Submit
+                                Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        
+        <div id="footer-placeholder"></div>
+
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('navbar-jobseeker.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                });
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        });
+    </script>
+    <script src="navbar-jobseeker.js"></script>
+    <script src="job-details.js"></script>
+    <!-- <script src="index.js"></script> -->
+    <script src="apply-now-modal.js"></script>
+</body>
+
+</html>
