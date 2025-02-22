@@ -7,6 +7,10 @@
 
 
 .navhead{
-    background-color:#0C4F3F ;
+    background-color:#FEF6F3;
     color: black;
+}
+.img1 {
+    height: 600px;
+    width: 500px;
 }
